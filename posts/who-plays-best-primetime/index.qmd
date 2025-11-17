@@ -9,7 +9,7 @@ format:
     code-fold: true
 ---
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(ggbeeswarm)
 library(ggrepel)
@@ -17,7 +17,7 @@ library(ggalt)
 library(ggtext)
 library(waffle)
 library(patchwork)
-seasonsWtime <- read_csv("season_stats_withtime.csv")
+seasonsSorted <- read_csv("season_stats_withtime.csv")
 
 only23 <- seasonsSorted |>
   filter(season == 2023)
@@ -50,6 +50,12 @@ big23 <- only23 |>
 
 sec23 <- only23 |>
   filter(conference == "SEC")
+
+sec24 <- only24 |>
+  filter(conference == "SEC")
+
+big24 <- only24 |>
+  filter(conference == "Big Ten")
 
 acc23 <- only23 |>
   filter(conference == "ACC")
